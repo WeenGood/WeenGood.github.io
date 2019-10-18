@@ -5,12 +5,51 @@
 	background-color:#009F9F;
 	text-align:center;
 	}
+	.cell{
+		width:50%;
+	}
+	.string{
+		display:flex;
+	}
+	.text{
+		position:relative;
+		padding:15% 0% 15% 0%;
+		font-size:300%;
+	}
 </style>
 <head>
-<h1>Данная страница находится в разработке</h1>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body class = page>
-<h1>Тело страницы</h1>
+<div style = "background-color:red" class = string>
+	<div style = "background-color:yellow" class = cell>
+		<p class=text id = "asd">Лабораторная работа №1</p>
+	</div>
+	<div style = "background-color:orange" class = cell>
+		<p class=text>Лабораторная работа №2</p>
+	</div>
+</div>
+<div style = "background-color:green" class = string>
+	<div style = "background-color:lime" class = cell>
+		<p class=text>Лабораторная работа №3</p>
+	</div>
+	<div style = "background-color:blue" class = cell>
+		<p class=text>Лабораторная работа №4</p>
+	</div>
+</div>
+<script>
+	function test(){
+		$("div").css("background-color","red")
+		setTimeout(function(){
+			$("div").css("background-color","white")
+		}, 1500)
+	}
+	//document.getElementById("asd").addEventListener("click", test)
+	[].forEach.call($(".cell"),function(el){
+		el.addEventListener('click', test)
+	});
+	
+</script>
 </body>
 
 </html>
