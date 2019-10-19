@@ -30,33 +30,29 @@
 </head>
 <body class = page>
 <div class = string>
-	<div class = cell>
-		<p class=text id = "asd"><a href= "./lab1.html">Лабораторная работа №1</a></p>
+	<div class = cell id = "lab1">
+		<p class=text>Лабораторная работа №1</p>
 	</div>
-	<div class = cell>
+	<div class = cell id = "lab2">
 		<p class=text>Лабораторная работа №2</p>
 	</div>
 </div>
 <div class = string>
-	<div class = cell>
+	<div class = cell id = "lab3">
 		<p class=text>Лабораторная работа №3</p>
 	</div>
-	<div class = cell>
+	<div class = cell id = "lab4">
 		<p class=text>Лабораторная работа №4</p>
 	</div>
 </div>
 <script>
-	function test(){
-		bc = $("div").css("background-color")
-		$("div").css("background-color","red")
-		setTimeout(function(){
-			$("div").css("background-color",bc)
-		}, 1500)
-		return location.href = "./lab1.html"
+	function linkClick(event){
+		id = event.currentTarget.id
+		link = "./"+id+".html"
+		return location.href = link
 	}
-	//document.getElementById("asd").addEventListener("click", test)
 	[].forEach.call($(".cell"),function(el){
-		el.addEventListener('click', test)
+		el.addEventListener('click', linkClick)
 	});
 	
 </script>
