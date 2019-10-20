@@ -1,24 +1,51 @@
 <html>
 	<head>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<style>
 			.page{
 				text-align:center;
 			}
 			.slide{
 				display:inline-block;
-				width:50%;
-				height:50%;
-				margin: 150px;
+				width: 50%;
+				height:auto;
+				margin:5px;
 			}
 			.imgClass{
-				width:100%;
-				height:100%;
+				display:none;
+				width: 100%;
+				height: auto;
+			}
+			.imgActive{
+				display: block;
 			}
 		</style>
 	</head>
 	<body class = page >
 		<div class = slide>
-			<img class = imgClass src = "https://ar.culture.ru/attachments/attachment/preview/5d712dd8b5069c3d4f32d291-preview.jpg">
+			<img class = "imgClass imgActive" src = "https://ar.culture.ru/attachments/attachment/preview/5d712dd8b5069c3d4f32d291-preview.jpg">
+			<img class = imgClass src = "https://upload.wikimedia.org/wikipedia/commons/f/fe/Айвазовский_И.К._Волна.jpg">
+			<img class = imgClass src = "https://www.msk-guide.ru/img/146/143143big.jpg">
 		</div>
+		<div>
+			<input type = button value = 123 onclick = "nextSlide()">
+		</div>
+	<script>
+		i = 0
+		maxI = $("img").length
+		function nextSlide()
+		{
+			$("img:eq("+i+")").removeClass("imgActive")
+			i += 1
+			if (i < maxI)
+				$("img:eq("+i+")").addClass("imgActive")
+			else
+				{
+					i = 0
+					$("img:eq("+i+")").addClass("imgActive")
+				}
+			
+		}
+	</script>
 	</body>
 </html>
