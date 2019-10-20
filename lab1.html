@@ -7,9 +7,10 @@
 			}
 			.slide{
 				display:inline-block;
-				width: 50%;
+				width: 70%;
 				height:auto;
 				margin:5px;
+				border: 3px solid black;
 			}
 			.imgClass{
 				display:none;
@@ -19,32 +20,53 @@
 			.imgActive{
 				display: block;
 			}
+			.butClass{
+				border-radius:50%;
+				background-color:black;
+				width:35px;
+				height:35px;
+			}
+			.butActive{
+				background-color:white;
+				box-shadow:inset 0px 0px 0px 4px black;
+			}
+			.class{
+				
+			}
 		</style>
+		<div class = head>
+		
+		</div>
 	</head>
 	<body class = page >
+		<title>Лабораторная работа №1</title>
 		<div class = slide>
-			<img class = "imgClass imgActive" src = "https://ar.culture.ru/attachments/attachment/preview/5d712dd8b5069c3d4f32d291-preview.jpg">
-			<img class = imgClass src = "https://upload.wikimedia.org/wikipedia/commons/f/fe/Айвазовский_И.К._Волна.jpg">
-			<img class = imgClass src = "https://www.msk-guide.ru/img/146/143143big.jpg">
+			<img class = "imgClass imgActive" src = "./lab1 slider/1.png">
+			<img class = imgClass src = "./lab1 slider/2.png">
+			<img class = imgClass src = "./lab1 slider/3.png">
+			<img class = imgClass src = "./lab1 slider/4.png">
+			<img class = imgClass src = "./lab1 slider/5.png">
 		</div>
 		<div>
-			<input type = button value = 123 onclick = "nextSlide()">
+			<input type = button name = 1 class = "butClass butActive">
+			<input type = button name = 2 class = butClass>
+			<input type = button name = 3 class = butClass>
+			<input type = button name = 4 class = butClass>
+			<input type = button name = 5 class = butClass>
 		</div>
 	<script>
-		i = 0
-		maxI = $("img").length
-		function nextSlide()
+		i = 0;
+		[].forEach.call($("input"),function(el){
+			el.addEventListener('click', nextSlide)
+		});
+		
+		function nextSlide(event)
 		{
 			$("img:eq("+i+")").removeClass("imgActive")
-			i += 1
-			if (i < maxI)
-				$("img:eq("+i+")").addClass("imgActive")
-			else
-				{
-					i = 0
-					$("img:eq("+i+")").addClass("imgActive")
-				}
-			
+			$("input:eq("+i+")").removeClass("butActive")
+			i = event.currentTarget.name-1
+			$("img:eq("+i+")").addClass("imgActive")
+			$("input:eq("+i+")").addClass("butActive")
 		}
 	</script>
 	</body>

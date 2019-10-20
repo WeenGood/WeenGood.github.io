@@ -29,33 +29,34 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body class = page>
-<div class = string>
-	<div class = cell id = "lab1">
-		<p class=text>Лабораторная работа №1</p>
+	<title>Личная страница</title>
+	<div class = string>
+		<div class = cell id = "lab1">
+			<p class=text>Лабораторная работа №1</p>
+		</div>
+		<div class = cell id = "lab2">
+			<p class=text>Лабораторная работа №2</p>
+		</div>
 	</div>
-	<div class = cell id = "lab2">
-		<p class=text>Лабораторная работа №2</p>
+	<div class = string>
+		<div class = cell id = "lab3">
+			<p class=text>Лабораторная работа №3</p>
+		</div>
+		<div class = cell id = "lab4">
+			<p class=text>Хотите знать больше?	</p>
+		</div>
 	</div>
-</div>
-<div class = string>
-	<div class = cell id = "lab3">
-		<p class=text>Лабораторная работа №3</p>
-	</div>
-	<div class = cell id = "lab4">
-		<p class=text>Хотите знать больше?	</p>
-	</div>
-</div>
-<script>
-	function linkClick(event){
-		id = event.currentTarget.id
-		link = "./"+id+".html"
-		return location.href = link
-	}
-	[].forEach.call($(".cell"),function(el){
-		el.addEventListener('click', linkClick)
-	});
-	
-</script>
+	<script>
+		function linkClick(event){
+			id = event.currentTarget.id
+			link = "./"+id+".html"
+			return location.href = link
+		}
+		[].forEach.call($(".cell"),function(el){
+			el.addEventListener('click', linkClick)
+		});
+		
+	</script>
 </body>
 
 </html>
