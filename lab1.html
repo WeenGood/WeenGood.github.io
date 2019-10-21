@@ -25,7 +25,7 @@
 			<input type = button name = 5 class = butClass>
 		</div>
 	<script>
-		[].forEach.call($("input"),function(el){
+		[].forEach.call($(".butClass"),function(el){
 			el.addEventListener('mouseenter', nextSlide)
 		});
 		$(".title1:first").html(document.title);
