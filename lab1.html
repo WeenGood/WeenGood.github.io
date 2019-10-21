@@ -1,41 +1,11 @@
 <html>
 	<head>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<style>
-			.page{
-				text-align:center;
-			}
-			.slide{
-				display:inline-block;
-				width: 70%;
-				height:auto;
-				margin:5px;
-				border: 3px solid black;
-			}
-			.imgClass{
-				display:none;
-				width: 100%;
-				height: auto;
-			}
-			.imgActive{
-				display: block;
-			}
-			.butClass{
-				border-radius:50%;
-				background-color:black;
-				width:35px;
-				height:35px;
-			}
-			.butActive{
-				background-color:white;
-				box-shadow:inset 0px 0px 0px 4px black;
-			}
-			.class{
-				
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="./css.css">
 		<div class = head>
-		
+			<input type = button value = "На главную" class = button1 onclick = back()>
+			<span class = title1></span>
+			<span class = title1 style = "float:right; margin:10px 10px 0px 0px">Провоторов И. А.</span>
 		</div>
 	</head>
 	<body class = page >
@@ -55,18 +25,20 @@
 			<input type = button name = 5 class = butClass>
 		</div>
 	<script>
-		i = 0;
 		[].forEach.call($("input"),function(el){
-			el.addEventListener('click', nextSlide)
+			el.addEventListener('mouseenter', nextSlide)
 		});
-		
+		$(".title1:first").html(document.title);
 		function nextSlide(event)
 		{
-			$("img:eq("+i+")").removeClass("imgActive")
-			$("input:eq("+i+")").removeClass("butActive")
-			i = event.currentTarget.name-1
-			$("img:eq("+i+")").addClass("imgActive")
-			$("input:eq("+i+")").addClass("butActive")
+			$(".imgActive").removeClass("imgActive");
+			$(".butActive").removeClass("butActive");
+			i = event.currentTarget.name-1;
+			$(".imgClass:eq("+i+")").addClass("imgActive");
+			$(".butClass:eq("+i+")").addClass("butActive");
+		}
+		function back(){
+			return location.href = "./index.html";
 		}
 	</script>
 	</body>
