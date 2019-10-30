@@ -23,23 +23,10 @@
 		<div class = cell id = "lab3">
 			<p class=text>Лабораторная работа №3</p>
 		</div>
-		<div class = cell id = "lab4">
+		<div class = cell id = "info">
 			<p class=text>Хотите знать больше?	</p>
 		</div>
 	</div>
-	<script>
-		$(".title1:first").html(document.title);
-		
-		function linkClick(event){
-			id = event.currentTarget.id
-			link = "./"+id+".html"
-			return location.href = link
-		}
-		[].forEach.call($(".cell"),function(el){
-			el.addEventListener('click', linkClick)
-		});
-		
-	</script>
 </body>
-
+<script src = "scripts.js"></script>
 </html>

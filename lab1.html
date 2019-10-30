@@ -2,6 +2,7 @@
 	<head>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./css.css">
+		<script src = "./scripts.js"></script>
 		<div class = head>
 			<input type = button value = "На главную" class = button1 onclick = back()>
 			<span class = title1></span>
@@ -24,22 +25,6 @@
 			<input type = button name = 4 class = butClass>
 			<input type = button name = 5 class = butClass>
 		</div>
-	<script>
-		[].forEach.call($(".butClass"),function(el){
-			el.addEventListener('mouseenter', nextSlide)
-		});
-		$(".title1:first").html(document.title);
-		function nextSlide(event)
-		{
-			$(".imgActive").removeClass("imgActive");
-			$(".butActive").removeClass("butActive");
-			i = event.currentTarget.name-1;
-			$(".imgClass:eq("+i+")").addClass("imgActive");
-			$(".butClass:eq("+i+")").addClass("butActive");
-		}
-		function back(){
-			return location.href = "./index.html";
-		}
-	</script>
 	</body>
+<script src = "scripts.js"></script>
 </html>
